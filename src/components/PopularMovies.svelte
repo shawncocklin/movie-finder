@@ -1,0 +1,25 @@
+<script>
+  export let movies
+  import MovieCard from './MovieCard.svelte'
+  console.log(movies[0])
+</script>
+
+<h3>Popular Movies</h3>
+<div class="popular-movies">
+  {#each movies as movie}
+      <MovieCard {movie}/>
+    {/each}
+</div>
+
+<style>
+  .popular-movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
+  }
+
+  h3 {
+    padding: 1rem;
+  }
+</style>
